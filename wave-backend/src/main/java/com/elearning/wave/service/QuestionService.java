@@ -11,12 +11,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service// menandakan kelas ini sebagai service "logika"
+@Service
 public class QuestionService {
 
-    private final QuestionRepository questionRepository; //bertipe questionrep, yang akan berinteraksi dengan database
+    private final QuestionRepository questionRepository; 
 
-    @Autowired //automatis memasukan dependency yaitu questionrepository ke dalam konstruktor kelas ini
+    @Autowired 
     public QuestionService(QuestionRepository questionRepository) {
         this.questionRepository = questionRepository;
     }
