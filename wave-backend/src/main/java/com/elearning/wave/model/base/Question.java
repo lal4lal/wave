@@ -3,8 +3,8 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // Use inheritance mapping strategy
-@DiscriminatorColumn(name = "question_type", discriminatorType = DiscriminatorType.STRING) // Add discriminator column
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) 
+@DiscriminatorColumn(name = "question_type", discriminatorType = DiscriminatorType.STRING)
 public abstract class Question extends BaseEntity {
     @Column(name = "question_text")
     protected String questionText;
