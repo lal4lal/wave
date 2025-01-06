@@ -16,13 +16,11 @@ import static com.elearning.wave.security.SecurityConstant.WHITE_LIST_URL;
 
 @Configuration
 public class SecurityConfig {
-    private JWTAuthEntryPoint jwtAuthEntryPoint;
-    private CustomUserDetailService customUserDetailService;
+    private final JWTAuthEntryPoint jwtAuthEntryPoint;
 
     @Autowired
-    public SecurityConfig(JWTAuthEntryPoint jwtAuthEntryPoint, CustomUserDetailService customUserDetailService) {
+    public SecurityConfig(JWTAuthEntryPoint jwtAuthEntryPoint) {
         this.jwtAuthEntryPoint = jwtAuthEntryPoint;
-        this.customUserDetailService = customUserDetailService;
     }
 
     @Bean
