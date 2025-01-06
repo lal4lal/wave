@@ -5,7 +5,9 @@ import jakarta.persistence.*;
 @Table(name = "modules")
 public class Module extends BaseEntity {
     private String title;
+    @Column(length = 1000)
     private String description;
+    @Column(length = 10000)
     private String content;
     private static final int POINT_REQUIRED = 10;
     @ManyToOne

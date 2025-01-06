@@ -6,6 +6,7 @@ import java.util.List;
 @Table(name = "course")
 public class Course extends BaseEntity {
     private String title;
+    @Column(length = 1000)
     private String description;
     @OneToMany(mappedBy = "course")
     private List<Module> modules;
