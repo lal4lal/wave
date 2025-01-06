@@ -40,7 +40,7 @@ public class EnrolledCourseService {
 
     public List<EnrolledCourseDTO> getUserEnrolledCoursesById(long userId) {
         List<EnrolledCourse> enrolledCourse = enrolledCourseRepository
-                .findAllByUsersUserId(userId)
+                .findAllByUsersId(userId)
                 .orElseThrow(() -> new IllegalArgumentException("User hasn't enroll any course"));
         return enrolledCourse
                 .stream()
@@ -50,12 +50,12 @@ public class EnrolledCourseService {
 
     public EnrolledCourse getEnrollCourseByCourseAndUser(long userId, long courseId) {
         return enrolledCourseRepository
-                .findByUsersUserIdAndCourseCourseId(userId, courseId)
+                .findByUsersIdAndCourseId(userId, courseId)
                 .orElseThrow(() -> new IllegalArgumentException("enroll course not found"));
     }
 
     public String enrollCourse(EnrollRequestDTO enrollRequestDTO) {
-        Optional<EnrolledCourse> enrolledCourseOptional = enrolledCourseRepository.findByUsersUserIdAndCourseCourseId(
+        Optional<EnrolledCourse> enrolledCourseOptional = enrolledCourseRepository.findByUsersIdAndCourseId(
                 enrollRequestDTO.getUserId(),
                 enrollRequestDTO.getCourseId()
         );
