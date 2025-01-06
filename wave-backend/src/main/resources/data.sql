@@ -166,7 +166,7 @@ VALUES (3, 'MULTIPLE_CHOICE', 'Which of these data structures can be used for tr
 INSERT INTO options (question_id, options) VALUES (15, 'Graph');
 INSERT INTO options (question_id, options) VALUES (15, 'Tree');
 INSERT INTO options (question_id, options) VALUES (15, 'Stack');
-INSERT INTO options (question_id, options) VALUES (15, 'Stack');
+INSERT INTO options (question_id, options) VALUES (15, 'Array');
 INSERT iNTO correct_answers (question_id, correct_answer) VALUES (15, 'Graph');
 INSERT iNTO correct_answers (question_id, correct_answer) VALUES (15, 'Tree');
 INSERT iNTO correct_answers (question_id, correct_answer) VALUES (15, 'Array');
