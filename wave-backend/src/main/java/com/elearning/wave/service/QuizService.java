@@ -15,7 +15,7 @@ public class QuizService {
     private final QuizRepository quizRepository;
     private final QuestionService questionService;
     private final EnrolledCourseService enrolledCourseService;
-    private final CorrectAnswerRepository correctAnswerRepository;
+
 
     @Autowired
     public QuizService(QuizRepository quizRepository,
@@ -25,7 +25,7 @@ public class QuizService {
         this.quizRepository = quizRepository;
         this.questionService = questionService;
         this.enrolledCourseService = enrolledCourseService;
-        this.correctAnswerRepository = correctAnswerRepository;
+
     }
 
     public QuizDTO convertEntityToQuizDto(Quiz quiz) {
