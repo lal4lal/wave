@@ -4,11 +4,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "course")
-public class Course {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "course_id")
-    private long courseId;
+public class Course extends BaseEntity {
     private String title;
     private String description;
     @OneToMany(mappedBy = "course")
@@ -16,21 +12,23 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private List<EnrolledCourse> enrolledCourse;
 
-
-
-
+    public Course(String title, String description, List<Module> modules, List<EnrolledCourse> enrolledCourse) {
+        this.title = title;
+        this.description = description;
+        this.modules = modules;
+        this.enrolledCourse = enrolledCourse;
+    }
 
     public Course() {
     }
 
-    public Course(int courseId, String title, String description) {
-        this.courseId = courseId;
-        this.title = title;
-        this.description = description;
+    @Override
+    public void displayInfo() {
+        System.out.println("Course Title: " + title);
+        System.out.println("Course Description: " + description);
     }
 
-    public long getCourseId() { return courseId; }
-    public void setCourseId(long courseId) { this.courseId = courseId; }
+
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
     public String getDescription() { return description; }
