@@ -20,8 +20,7 @@ public class QuizService {
     @Autowired
     public QuizService(QuizRepository quizRepository,
                        QuestionService questionService,
-                       EnrolledCourseService enrolledCourseService,
-                       CorrectAnswerRepository correctAnswerRepository) {
+                       EnrolledCourseService enrolledCourseService) {
         this.quizRepository = quizRepository;
         this.questionService = questionService;
         this.enrolledCourseService = enrolledCourseService;
